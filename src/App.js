@@ -1,22 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import {useSate} from 'react';
+import {ethers} from 'ethers';
+import Ballot from './artifacts/contracts/Ballot.sol/Ballot.json'
+
+const ballotAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3"
 
 function App() {
+
+  async function requestAccount(){ //connect to the metamask wallet of a user
+    await window.ethereum.request({method: 'eth_requestAccounts'}); //request account info and promp connection of a metamask account
+  }
+
+//async function function giveRighttoVote(){}
+
+//async function removeVotingRights(){}
+
+//async function removeVotingRights(){}
+
+//async function delegate(){}
+
+//async function vote(){}
+
+//async function winningProposal(){}
+
+//async function winnerName(){}
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Voting Application </h1>
+        <h3>Contract Address: {ballotAddress}</h3>
+        
       </header>
     </div>
   );
